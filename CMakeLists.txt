@@ -9,6 +9,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+if(MSVC)
+    add_compile_definitions(_HAS_AUTO_PTR_ETC=1)
+endif()
 add_subdirectory(vendor/SFML)
 
 add_executable(minesweeper WIN32 src/main.cpp src/Field.cpp src/Field.h src/Tile.cpp src/Tile.h)
