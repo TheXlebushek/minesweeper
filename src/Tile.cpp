@@ -1,9 +1,9 @@
 #include "Tile.h"
 
-Tile::Tile()
+Tile::Tile(uint32_t bombChance)
 {
     int chance = rand() % 100;
-    if (chance < 90)
+    if (chance < 100 - bombChance)
         _type = Type::Empty;
     else
         _type = Type::Bomb;

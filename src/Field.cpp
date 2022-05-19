@@ -1,12 +1,12 @@
 #include "Field.h"
 
-Field::Field(sf::Vector2u size)
+Field::Field(sf::Vector2u size, uint32_t bombChance)
 {
     _size = size;
     for (int i = 0; i < _size.x; ++i) {
         _tiles.emplace_back(std::vector<Tile>());
         for (int j = 0; j < _size.y; ++j) {
-            _tiles[i].emplace_back(Tile());
+            _tiles[i].emplace_back(Tile(bombChance));
             _totalBombs += _tiles[i][j].isBomb();
         }
     }

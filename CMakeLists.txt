@@ -14,7 +14,10 @@ if(MSVC)
 endif()
 add_subdirectory(vendor/SFML)
 
-add_executable(minesweeper WIN32 src/main.cpp src/Field.cpp src/Field.h src/Tile.cpp src/Tile.h)
+include_directories(vendor/ImGui)
+include_directories(vendor/ImGui-SFML)
+
+add_executable(minesweeper WIN32 src/main.cpp src/Field.cpp src/Field.h src/Tile.cpp src/Tile.h src/ImGui.h)
 
 target_link_libraries(minesweeper sfml-graphics opengl32)
 

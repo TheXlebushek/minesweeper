@@ -2,3 +2,10 @@
 	path = vendor/SFML
 	url = https://github.com/SFML/SFML.git
 	branch = 2.5.x
+[submodule "vendor/ImGui"]
+	path = vendor/ImGui
+	url = https://github.com/ocornut/imgui.git
+	branch = docking
+[submodule "vendor/ImGui-SFML"]
+	path = vendor/ImGui-SFML
+	url = https://github.com/eliasdaler/imgui-sfml.git

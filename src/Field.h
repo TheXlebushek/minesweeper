@@ -7,7 +7,7 @@
 class Field : public sf::Drawable
 {
 public:
-    Field(sf::Vector2u size);
+    Field(sf::Vector2u size, uint32_t bombChance = 10);
 
     bool isGameOver() const;
 
