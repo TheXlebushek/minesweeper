@@ -1,7 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include "Field.h"
 
+#ifdef _MSC_VER
+#include <windows.h>
+int WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
+#else
 int main()
+#endif
 {
     sf::Vector2u size = {10, 10};
     int scale = 4;
