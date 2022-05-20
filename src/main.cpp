@@ -34,6 +34,10 @@ int main()
     field.setScale(scale);
 
     int bombChance = 10;
+
+    sf::Vector2u prevSize = size;
+    int prevBombChance = bombChance;
+
     mainWindow.requestFocus();
     while (mainWindow.isOpen()) {
         sf::Event event = {};
@@ -43,7 +47,7 @@ int main()
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 mainWindow.close();
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-                field = Field(size);
+                field = Field(prevSize, prevBombChance);
                 field.setScale(scale);
                 mainWindow.setTitle("Minesweeper");
             }
@@ -79,6 +83,8 @@ int main()
             field = Field(size, bombChance);
             field.setScale(scale);
             mainWindow.setTitle("Minesweeper");
+            prevSize = size;
+            prevBombChance = bombChance;
         }
         ImGui::SameLine();
         if (ImGui::Button("Restore")) {
